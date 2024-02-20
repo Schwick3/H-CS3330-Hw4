@@ -1,4 +1,4 @@
-package edu.mu;
+package src.edu.mu;
 
 public class Main {
 
