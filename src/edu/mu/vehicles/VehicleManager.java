@@ -1,7 +1,10 @@
 package src.edu.mu.vehicles;
 
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -159,6 +162,22 @@ public class VehicleManager {
 			return true;
 		}
 		catch(Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	public boolean saveVehicleList() {
+		try {
+			BufferedWriter bw = new BufferedWriter(new FileWriter(vehicleFilePath, false));
+			for(Vehicle item: vehicles) {
+				bw.write(item.type + "," + item.brand + "," + item.make + "," + item.modelYear + "," + item.price + "," + item.color + "," +
+						item.fuelType + "," + item.mileage + "," + item.mass + "," + item.cylinders +
+						"," + item.gasTankCapacity + "," + item.startType + System.lineSeparator());
+			}
+			bw.close();
+			return true;
+		}
+		catch(IOException e) {
 			e.printStackTrace();
 			return false;
 		}
