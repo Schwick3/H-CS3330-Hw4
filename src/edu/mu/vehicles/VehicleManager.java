@@ -60,4 +60,12 @@ public class VehicleManager {
 		
 			}
 	}
+		
+	public void displayVehicleInformation(Vehicle v) {
+		if(vehicles.contains(v)) {
+			v.toString();
+		}
+		else
+			System.out.println("Vehicle not found");
+	}
 }
