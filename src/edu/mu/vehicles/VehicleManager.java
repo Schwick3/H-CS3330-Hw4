@@ -182,13 +182,6 @@ public class VehicleManager {
 			return false;
 		}
 	}
-	private boolean isVehicleType(Vehicle v, Class clazz ) {
-		
-		if(v.getClass().equals(clazz)) {
-			return true;
-		}
-		else return false;
-	}
 	
 	
 	
