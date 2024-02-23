@@ -143,7 +143,25 @@ public class VehicleManager {
 	}
 	
 	public boolean removeVehicle(Vehicle vehicle) {
+		Iterator<Vehicle> removeIterator = vehicles.iterator();
 		
+		while(removeIterator.hasNext()) {
+			if(vehicle.equals(removeIterator.next())){
+				removeIterator.remove();
+				return true;
+			}
+		}
+		return false;
+	}
+	public boolean addVehicle(Vehicle vehicle) {
+		try {
+			vehicles.add(vehicle);
+			return true;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 	
 	
