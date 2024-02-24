@@ -1,7 +1,6 @@
 package edu.mu.vehicles;
 
 public class Truck extends Vehicle {
-
 	@Override
 	public double calculateMaintenceCost(double distance) {
 		// TODO Auto-generated method stub
@@ -10,8 +9,7 @@ public class Truck extends Vehicle {
 
 	@Override
 	public void startEngine() {
-		// TODO Auto-generated method stub
-		
+		System.out.print(getStartType());
 	}
 
 }

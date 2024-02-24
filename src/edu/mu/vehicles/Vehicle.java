@@ -23,4 +23,9 @@ public abstract class Vehicle {
 	public abstract double calculateMaintenceCost(double distance);
 		
 	public abstract void startEngine();
+
+	public StartMechanism getStartType() {
+		return startType;
+	}
+	
 }
