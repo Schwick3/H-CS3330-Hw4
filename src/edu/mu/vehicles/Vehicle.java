@@ -19,4 +19,8 @@ public abstract class Vehicle {
 				+ ", Color: " + color + ", Fuel Type: " + fuelType + ", Mileage" + mileage + ", Mass: " + mass
 				+ ", Number of Cylinders: " + cylinders + ", Fuel Capacity" + gasTankCapacity + ", Start Type:" + startType;
 	}
+	
+	public abstract double calculateMaintenceCost(double distance);
+		
+	public abstract void startEngine();
 }
