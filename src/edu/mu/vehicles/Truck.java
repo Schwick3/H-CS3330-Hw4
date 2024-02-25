@@ -1,10 +1,11 @@
 package edu.mu.vehicles;
 
 public class Truck extends Vehicle {
+	int currentYear = 2024;
 	@Override
 	public double calculateMaintenceCost(double distance) {
-		// TODO Auto-generated method stub
-		return 0;
+		double maintenceCost = (distance*mass*(currentYear - modelYear)*cylinders*.1);
+		return maintenceCost;
 	}
 
 	@Override
