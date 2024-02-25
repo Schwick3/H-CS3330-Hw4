@@ -1,8 +1,8 @@
-package edu.mu.vehicles;
+package src.edu.mu.vehicles;
 
 public enum FuelType {
 	GASOLINE,
-	DEISEL,
+	DIESEL,
 	ELECTRIC,
 	HYBRID
 
