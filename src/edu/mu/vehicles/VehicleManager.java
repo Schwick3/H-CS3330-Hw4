@@ -1,6 +1,15 @@
 package edu.mu.vehicles;
 
 import java.io.*;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Random;
+import java.util.Scanner;
 
 import java.util.*;
 
@@ -236,4 +245,65 @@ public class VehicleManager {
 		return fuelEfficiencySUV;
 	}
 	
+	public int getNumberOfVehichlesByType(Class clazz) {
+		int count = 0;
+		
+		for (int i = 0; i < vehicles.size(); i++) { //increments thru amount of vehicles
+				if (isVehicleType(vehicles.get(i), clazz)) { //checks if same type
+					count++; //increments counter variable
+				}
+			}
+			return count; //return count
+	}
+	
+	public Vehicle getVehicleWithHighestMaintenanceCost(double distance) {
+		ArrayList<Vehicle> highMaintenanceVehicles = new ArrayList<Vehicle>();
+		double highMaintenance = vehicles.get(0).calculateMaintenceCost(distance);
+		for (Vehicle vehicle : vehicles) {
+			if(vehicle.calculateMaintenceCost(distance) > highMaintenance) {
+				highMaintenanceVehicles.clear();
+				highMaintenance = vehicle.calculateMaintenceCost(distance);
+				highMaintenanceVehicles.add(vehicle);
+		}
+			else if(vehicle.calculateMaintenceCost(distance) == highMaintenance){
+				highMaintenanceVehicles.add(vehicle);
+			}
+			
+	}
+		
+		if(highMaintenanceVehicles.size() > 1) //checks if more than one, returns random
+		{
+			Random random = new Random();
+			return highMaintenanceVehicles.get(random.nextInt(highMaintenanceVehicles.size())); //returns random from array, bounded by size of array
+			}
+		
+		return highMaintenanceVehicles.get(0);
+
+	}	
+		
+		public Vehicle getVehicleWithLowestMaintenanceCost(double distance) {
+			ArrayList<Vehicle> lowMaintenanceVehicles = new ArrayList<Vehicle>();
+			double lowMaintenance = vehicles.get(0).calculateMaintenceCost(distance);
+			for (Vehicle vehicle : vehicles) {
+				if(vehicle.calculateMaintenceCost(distance) < lowMaintenance) {
+					lowMaintenanceVehicles.clear();
+					lowMaintenance = vehicle.calculateMaintenceCost(distance);
+					lowMaintenanceVehicles.add(vehicle);
+				}
+				else if(vehicle.calculateMaintenceCost(distance) == lowMaintenance){
+					lowMaintenanceVehicles.add(vehicle);
+				}
+			}
+			
+				if(lowMaintenanceVehicles.size() > 1) //checks if more than one, returns random
+				{
+					Random random = new Random();
+					return lowMaintenanceVehicles.get(random.nextInt(lowMaintenanceVehicles.size())); //returns random from array, bounded by size of array
+				}
+				
+				return lowMaintenanceVehicles.get(0);
+				
+		}
+
+		
 }
