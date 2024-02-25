@@ -24,7 +24,7 @@ public class VehicleManager {
 	//private static ArrayList<Vehicle> vehicleList = new ArrayList<Vehicle>();
 	
 	
-	public static boolean readFromFile() {
+	public static boolean initalizeStock() {
 		try {
 			Scanner fileIn = new Scanner(new FileInputStream(vehicleFilePath));
 			
@@ -44,7 +44,7 @@ public class VehicleManager {
 			}
 	}
 	public VehicleManager() {
-		readFromFile();
+		initalizeStock();
 		for(String[] _line : vStringList) {
 			if(_line[0].equals("Truck")) {
 				Truck tItem = new Truck(_line[0], _line[1], _line[2], Long.parseLong(_line[3]), Double.parseDouble(_line[4]), VehicleColor.valueOf(_line[5]), FuelType.valueOf(_line[6]),
