@@ -1,4 +1,4 @@
-package src.edu.mu.vehicles;
+package edu.mu.vehicles;
 
 public enum StartMechanism {
 	KEYSTART,

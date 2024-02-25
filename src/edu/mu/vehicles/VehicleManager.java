@@ -1,21 +1,11 @@
-package src.edu.mu.vehicles;
+package edu.mu.vehicles;
 
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Scanner;
+import java.io.*;
 
-import src.edu.mu.vehicles.Car;
-import src.edu.mu.vehicles.FuelType;
-import src.edu.mu.vehicles.MotorBike;
-import src.edu.mu.vehicles.SUV;
-import src.edu.mu.vehicles.StartMechanism;
-import src.edu.mu.vehicles.Truck;
-import src.edu.mu.vehicles.VehicleColor;
+import java.util.*;
+
+import edu.mu.vehicles.*;
+
 
 public class VehicleManager {
 	
@@ -70,15 +60,6 @@ public class VehicleManager {
 			}
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -189,66 +170,5 @@ public class VehicleManager {
 		}
 		else return false;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
