@@ -65,24 +65,24 @@ public class VehicleManager {
 	
 	
 	public void displayAllVehicleInformation() {
-		Iterator<Vehicle> iterator = vehicles.iterator();
-		while(iterator.hasNext()) {
-			System.out.println(iterator.next().toString());
+		Iterator<Vehicle> iterator = vehicles.iterator(); //iterator that iterates through the managers vehicles
+		while(iterator.hasNext()) { //while there is a next vehicle
+			System.out.println(iterator.next().toString()); // print it
 		}
 	}
 		
 		public void displayAllCarInformation() {
 			Iterator<Vehicle> iterator = vehicles.iterator();
-			Vehicle placeholder;
+			Vehicle placeholder; //place holder for the current car
 			while(iterator.hasNext()) {
-				placeholder = iterator.next();
-				if(placeholder instanceof Car) {
-				System.out.println(placeholder.toString());
+				placeholder = iterator.next(); 
+				if(placeholder instanceof Car) { // checks if the current vehicle is a car
+				System.out.println(placeholder.toString()); // if yes prints it
 				}
 		
 			}
 	}
-		public void displayAllSUVInformation() {
+		public void displayAllSUVInformation() { //does the same as displayAllCarInformation but for SUVs
 			Iterator<Vehicle> iterator = vehicles.iterator();
 			Vehicle placeholder;
 			while(iterator.hasNext()) {
@@ -94,7 +94,7 @@ public class VehicleManager {
 			}
 	}
 		
-		public void displayAllTruckInformation() {
+		public void displayAllTruckInformation() { //does the same as displayAllCarInformation but for Trucks
 			Iterator<Vehicle> iterator = vehicles.iterator();
 			Vehicle placeholder;
 			while(iterator.hasNext()) {
@@ -106,7 +106,7 @@ public class VehicleManager {
 			}
 	}
 		
-		public void displayAllMotorBikeInformation() {
+		public void displayAllMotorBikeInformation() { //does the same as displayAllCarInformation but for MotorBikes
 			Iterator<Vehicle> iterator = vehicles.iterator();
 			Vehicle placeholder;
 			while(iterator.hasNext()) {
@@ -118,12 +118,12 @@ public class VehicleManager {
 			}
 	}
 		
-	public void displayVehicleInformation(Vehicle v) {
-		if(vehicles.contains(v)) {
-			v.toString();
+	public void displayVehicleInformation(Vehicle v) { 
+		if(vehicles.contains(v)) { //checks if the vehicle is within the managers vehicles
+			v.toString(); // if yes prints it
 		}
 		else
-			System.out.println("Vehicle not found");
+			System.out.println("Vehicle not found"); //displays error message otherwise
 	}
 	
 	public boolean removeVehicle(Vehicle vehicle) {
