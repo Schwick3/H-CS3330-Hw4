@@ -38,6 +38,7 @@ public abstract class Vehicle {
 	
 	
 	
+	public abstract double calculateFuelEfficiency(double distance, double fuelPrice);
 	@Override
 	public String toString() {
 		return "Vehicle Type:" + type + "Vehicle Brand:" + brand + ", Make: " + make + ", Year: " + modelYear + ", Price: " + price

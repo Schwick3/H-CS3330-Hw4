@@ -17,4 +17,10 @@ public class SUV extends Vehicle {
 		super(type, brand, make, modelYear, price, color, fuelType, mileage, mass, cylinders, gasTankCapacity, startType);
 }
 
+	@Override
+	public double calculateFuelEfficiency(double distance, double fuelPrice) {
+		double fuelEfficiency = cylinders*gasTankCapacity*fuelPrice/distance*0.05;
+		return fuelEfficiency;
+	}
+
 }

@@ -171,4 +171,69 @@ public class VehicleManager {
 		else return false;
 	}
 	
+	
+	public ArrayList<Vehicle> getVehicleWithHighestFuelEfficiency(double distance, double fuelPrice){
+		double highEfficiency = 0;
+		ArrayList<Vehicle> highEfficiencyVehicles = new ArrayList<>();
+		
+		
+		for (Vehicle vehicle : vehicles) {
+			if (vehicle.calculateFuelEfficiency(distance, fuelPrice)>highEfficiency) {
+				highEfficiencyVehicles.clear();
+				highEfficiency = vehicle.calculateFuelEfficiency(distance, fuelPrice);
+				highEfficiencyVehicles.add(vehicle);
+				
+				
+			}
+			else if(vehicle.calculateFuelEfficiency(distance, fuelPrice)==highEfficiency){
+				
+				highEfficiencyVehicles.add(vehicle);
+				
+			}
+		}
+		return highEfficiencyVehicles;
+	}
+		
+	
+	public ArrayList<Vehicle> getVehicleWithLowestFuelEfficiency(double distance, double
+	fuelPrice){
+		double lowEfficiency = Double.MAX_VALUE;
+		ArrayList<Vehicle> lowEfficiencyVehicles = new ArrayList<>();
+		
+		
+		for (Vehicle vehicle : vehicles) {
+			if (vehicle.calculateFuelEfficiency(distance, fuelPrice)<lowEfficiency) {
+				lowEfficiencyVehicles.clear();
+				lowEfficiency = vehicle.calculateFuelEfficiency(distance, fuelPrice);
+				lowEfficiencyVehicles.add(vehicle);
+				
+				
+			}
+			else if(vehicle.calculateFuelEfficiency(distance, fuelPrice)==lowEfficiency){
+				
+				lowEfficiencyVehicles.add(vehicle);
+				
+			}
+		}
+		return lowEfficiencyVehicles;
+		
+	}
+	public double getAverageFuelEfficiencyOfSUVs(double distance,
+			double fuelPrice) {
+		double fuelEfficiencySUV = 0;
+		double count = 0;
+		for (Vehicle vehicle : vehicles) {
+			if (isVehicleType(vehicle, SUV.class)) {
+				count++;
+				fuelEfficiencySUV += vehicle.calculateFuelEfficiency(distance, fuelPrice);
+			}
+		}
+		if (count==0) {
+			return -1;
+		}
+		
+		fuelEfficiencySUV = fuelEfficiencySUV/count;
+		return fuelEfficiencySUV;
+	}
+	
 }
